@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV de Mouhamadou Fadel Fall - Étudiant en Géomatique à l'Université de Thiès. Spécialiste SIG, Télédétection et Topographie.">
+    <meta name="author" content="Mouhamadou Fadel Fall">
+
+    <!-- ============================================================
+         SÉCURITÉ : Content-Security-Policy
+         Restreint les origines autorisées à charger du contenu.
+         ⚠️ "frame-ancestors" est ignorée en <meta> (spec W3C) — utile
+         seulement si renvoyée en vrai en-tête HTTP par l'hébergeur.
+         ============================================================ -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+                   font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+                   img-src 'self' data:;
+                   script-src 'self';
+                   object-src 'none';
+                   base-uri 'self';
+                   form-action 'self';
+                   frame-ancestors 'none';
+                   upgrade-insecure-requests;">
+
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>CV - Mouhamadou Fadel Fall</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome — SRI vérifié (hash calculé sur le package npm officiel 6.4.0) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- LEFT COLUMN: SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3 id="past">Geomaticien</h3>
+                <h3 id="pn">Mouhamadou Fadel Fall</h3>
+            </div>
+
+            <div class="profile-pic-container">
+                <img src="fadel.jpg" class="profile-pic" loading="lazy">
+            </div>
+
+            <div class="sidebar-content">
+                <section class="sidebar-section">
+                    <h3>Informations personnelles</h3>
+
+                    <div class="info-email">
+                        <a id="email-link" href="#" rel="nofollow">
+                            <span id="email-fallback">fallmouhamadoufadel01@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="info-phone">
+                        <a id="phone-link" href="#" rel="nofollow">
+                            <span id="phone-fallback">+221 77 563 53 50</span>
+                        </a>
+                    </div>
+
+                    <div class="info-local"><i class="fas fa-map-marker-alt"></i> Thiès, Sénégal</div>
+                    <div class="info-linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/mouhamadou-fadel-fall-494b243a6"
+                           target="_blank" rel="noopener noreferrer">mouhamadou-fadel-fall</a>
+                    </div>
+                    <div class="info-github">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/fadelfall01"
+                           target="_blank" rel="noopener noreferrer">github.com/fadelfall01</a>
+                    </div>
+                    <div class="portfolio-link">
+                        <a href="https://fadelfall01.github.io/Mon_Portfolio/"
+                           target="_blank" rel="noopener noreferrer">Consulter mon Portfolio en ligne</a>
+                    </div>
+                </section>
+
+                <!-- ============================================================
+                     COMPÉTENCES — chips + puces de détails concrets par groupe
+                     ============================================================ -->
+                <section class="skills-section">
+                    <h3>Compétences</h3>
+
+                    <!-- SIG & Géomatique -->
+                    <div class="skills-group">
+                        <h4>SIG & Géomatique</h4>
+                        <div class="skills-list">
+                            <span>QGIS</span>
+                            <span>ArcGIS</span>
+                            <span>Google Earth Engine</span>
+                            <span>AutoCAD / Covadis</span>
+                            <span>KoboToolbox</span>
+                        </div>
+                    </div>
+
+                    <!-- Télédétection -->
+                    <div class="skills-group">
+                        <h4>Télédétection & Analyse spatiale</h4>
+                        <div class="skills-list">
+                            <span>ENVI</span>
+                            <span>Sentinel-2</span>
+                            <span>Landsat</span>
+                            <span>Analyse NDVI</span>
+                            <span>Détection des changements</span>
+                            <span>Classification d'images</span>
+                        </div>
+                    </div>
+
+                    <!-- Programmation & Data -->
+                    <div class="skills-group">
+                        <h4>Programmation & Data Science</h4>
+                        <div class="skills-list">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>SQL</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>GeoPandas</span>
+                        </div>
+                    </div>
+
+                    <!-- Développement Web -->
+                    <div class="skills-group">
+                        <h4>Développement Web</h4>
+                        <div class="skills-list">
+                            <span>Django</span>
+                            <span>Django REST Framework</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Outils -->
+                    <div class="skills-group">
+                        <h4>Outils & Environnement</h4>
+                        <div class="skills-list">
+                            <span>Git / GitHub</span>
+                            <span>VS Code</span>
+                            <span>Automatisation</span>
+                            <span>Analyse de données</span>
+                            <span>Gestion de projet</span>
+                            <span>Résolution de problèmes</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main-section">
+                    <h3><i class="fas fa-language"></i> Langues</h3>
+
+                    <div class="cv-item">
+                        <div class="language-item">
+                            <span>Français</span>
+                            <span class="cv-item-date">Courant</span>
+                        </div>
+
+                        <div class="language-item">
+                            <span>Anglais</span>
+                            <span class="cv-item-date">faible</span>
+                        </div>
+
+                        <div class="language-item">
+                            <span>Wolof</span>
+                            <span class="cv-item-date">Langue maternelle</span>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="main-section">
+                    <h3><i class="fas fa-heart"></i> Centres d'intérêt</h3>
+
+                    <div class="cv-item">
+                        <ul class="main-bullet-list">
+                            <li>
+                                <strong>Technologies & Innovation :</strong>
+                                exploration des nouvelles technologies, intelligence artificielle et développement de solutions numériques.
+                            </li>
+
+                            <li>
+                                <strong>Géospatial & Cartographie :</strong>
+                                veille sur les outils SIG, l'observation de la Terre et les nouvelles approches en géomatique.
+                            </li>
+
+                            <li>
+                                <strong>Culture scientifique & numérique :</strong>
+                                intérêt pour l'analyse, la résolution de problèmes et l'apprentissage continu.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sidebar-footer-wave"></div>
+        </aside>
+
+        <!-- RIGHT COLUMN: MAIN CONTENT -->
+        <main class="main-content">
+            <section class="main-section">
+                <h3><i class="fas fa-user-circle"></i> PROFIL</h3>
+                <p class="summary-text">
+                    Etudiant en géomatique, je conçois des solutions qui transforment les données spatiales en informations utiles pour la prise de décision. J'allie SIG, télédétection, topographie, analyse de données et développement afin de créer des outils performants et innovants.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <h2><i class="fas fa-briefcase"></i> EXPÉRIENCES & PROJETS</h2>
+                <span class="cv-item-date">2024 - Présent</span>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>Développeur Full-Stack & SIG | Projets personnels</span>
+                        
+                    </div>
+                    <p class="cv-item-sub">Développement & Technologies numériques</p>
+                    <div class="cv-item-details">
+                        <ul class="main-bullet-list">
+                            <li>Conception et développement d'applications web géospatiales (Python, Django, JavaScript).</li>
+                            <li>Création d'APIs REST et intégration de bases de données relationnelles et spatiales (MySQL).</li>
+                            <li>Conception et réalisation d'un portfolio numérique et CV interactif.</li>
+                            <li>Intégration d'outils d'intelligence artificielle appliqués au traitement des données géographiques.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>SIG, Télédétection & Analyse spatiale</span>
+                    </div>
+                    <div class="cv-item-details">
+                        <ul class="main-bullet-list">
+                            <li>Traitement et analyse d'images satellitaires multi-sources (Sentinel, Landsat).</li>
+                            <li>Classification de l'occupation du sol, détection des changements et suivi territorial.</li>
+                            <li>Analyse de données spatiales, calcul matriciel et traitement de signal avec Python et R.</li>
+                            <li>Création et édition de cartes thématiques de haute précision.</li>
+                            <li>Développement de scripts Python et R pour l'automatisation des traitements géospatiaux.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>Topographie & Travaux de terrain</span>
+                    </div>
+                    <p class="cv-item-sub">Station totale, GNSS & Niveau optique</p>
+                    <div class="cv-item-details">
+                        <ul class="main-bullet-list">
+                            <li>Réalisation de levés topographiques et acquisition de données géodésiques sur le terrain.</li>
+                            <li>Implantation d'ouvrages, contrôle des mesures et géoréférencement GNSS.</li>
+                            <li>Exécution de travaux de nivellement et calculs topométriques associés.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <section class="skills-section">
+                    <h2>Savoir-être</h2>
+
+                    <div class="skills-group">
+                        <h4>Qualités professionnelles</h4>
+                        <div class="skills-list">
+                            <span>Rigueur</span>
+                            <span>Autonomie</span>
+                            <span>Esprit d'analyse</span>
+                            <span>Organisation</span>
+                            <span>Curiosité</span>
+                            <span>Adaptabilité</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Collaboration</h4>
+                        <div class="skills-list">
+                            <span>Esprit d'équipe</span>
+                            <span>Communication</span>
+                            <span>Écoute</span>
+                            <span>Partage des connaissances</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Approche professionnelle</h4>
+                        <div class="skills-list">
+                            <span>Esprit critique</span>
+                            <span>Résolution de problèmes</span>
+                            <span>Apprentissage continu</span>
+                            <span>Prise d'initiative</span>
+                            <span>Persévérance</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ============================================================
+                 FORMATION — puces de détails ajoutées sous chaque diplôme
+                 ============================================================ -->
+            <section class="main-section">
+                <h2><i class="fas fa-graduation-cap"></i> Formation</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>Licence en Géomatique</span>
+                        <span class="cv-item-date">2024 - Présent</span>
+                    </div>
+                    <p class="cv-item-sub">Université de Thiès, Sénégal — UFR Sciences de l'Ingénieur</p>
+                    <div class="cv-item-details">
+                        <ul class="main-bullet-list">
+                            <li>Formation pluridisciplinaire : SIG, télédétection, topographie, géodésie et analyse spatiale.</li>
+                            <li>Développement de compétences en programmation appliquée (Python, R) pour l'automatisation des traitements géospatiaux.</li>
+                            <li>Réalisation de projets académiques : classification d'occupation du sol, levés topographiques, applications web géospatiales.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>Baccalauréat Scientifique</span>
+                        <span class="cv-item-date">2021 - 2024</span>
+                    </div>
+                    <p class="cv-item-sub">Formation scientifique générale</p>
+                    <div class="cv-item-details">
+                        <ul class="main-bullet-list">
+                            <li>Formation généraliste en mathématiques, physique-chimie et sciences de la vie et de la terre.</li>
+                            <li>Développement d'une base solide en raisonnement analytique et résolution de problèmes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="cv-footer-tag">
+                © CV | Mouhamadou Fadel Fall
+            </footer>
+        </main>
+    </div>
+
+    <script src="cv.js" defer></script>
+</body>
+</html>

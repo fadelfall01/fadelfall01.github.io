@@ -1,0 +1,642 @@
+/* ============================================================
+   VARIABLES GLOBAL & RESET
+   ============================================================ */
+:root {
+    --primary-blue: #1e3a8a;
+    --accent-blue: #2563eb;
+    --light-blue: #eff6ff;
+    --chip-bg: #e0f2fe;
+    --chip-text: #0369a1;
+    --text-dark: #1f2937;
+    --text-muted: #4b5563;
+    --bg-body: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-color: #e5e7eb;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    line-height: 1.5;
+    padding: 2rem 1rem;
+}
+
+/* ============================================================
+   CONTENEUR PRINCIPAL
+   ============================================================ */
+.cv-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    overflow: hidden;
+}
+
+/* ============================================================
+   COLONNE GAUCHE : SIDEBAR
+   ============================================================ */
+.sidebar {
+    background-color: #f8fafc;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    padding: 2.5rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+#past {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #93c5fd;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+#pn {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.profile-pic-container {
+    background-color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: var(--radius-md); /* Photo carrée à bords légèrement adoucis */
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.sidebar-content {
+    padding: 30px 24px;
+    flex: 1;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3, 
+.sidebar .main-section h3 {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Informations de contact */
+.info-email, .info-phone, .info-local, .info-linkedin, .info-github, .portfolio-link {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    word-break: break-all;
+}
+
+.sidebar a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+    color: var(--primary-blue);
+}
+
+.portfolio-link {
+    margin-top: 0.8rem;
+    padding: 0.5rem;
+    background: var(--light-blue);
+    border-radius: var(--radius-sm);
+    text-align: center;
+}
+
+.portfolio-link a {
+    font-weight: 600;
+}
+
+/* Bouton Télécharger en PDF */
+.download-pdf-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0.6rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--accent-blue);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.download-pdf-btn:hover {
+    background-color: var(--primary-blue);
+}
+
+.download-pdf-btn:active {
+    transform: scale(0.98);
+}
+
+/* Bouton Basculer de vue (Graphique / ATS) */
+.toggle-view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0.6rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: #ffffff;
+    border: 1.5px solid var(--accent-blue);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.toggle-view-btn:hover {
+    background-color: var(--light-blue);
+}
+
+.toggle-view-btn:active {
+    transform: scale(0.98);
+}
+
+/* Groupes de compétences & chips */
+.skills-group {
+    margin-bottom: 1.25rem;
+}
+
+.skills-group h4 {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills-list span {
+    background-color: var(--chip-bg);
+    color: var(--chip-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Listes à puces de la sidebar */
+.main-bullet-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.main-bullet-list li {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.main-bullet-list li::before {
+    content: "•";
+    color: var(--accent-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Langues */
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.language-item:last-child {
+    border-bottom: none;
+}
+
+/* ============================================================
+   COLONNE DROITE : MAIN CONTENT
+   ============================================================ */
+.main-content {
+    padding: 36px;
+    background-color: var(--bg-card);
+}
+
+.main-content .main-section {
+    margin-bottom: 22px;
+}
+
+.main-content h2, 
+.main-content h3 {
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.summary-text {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Éléments de parcours (Expériences & Formations) */
+.cv-item {
+    margin-bottom: 1.5rem;
+}
+
+.cv-item:last-child {
+    margin-bottom: 0;
+}
+
+.cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.cv-item-date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: var(--light-blue);
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.cv-item-sub {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+    margin: 0.2rem 0 0.5rem 0;
+}
+
+.cv-item-details {
+    margin-top: 0.4rem;
+}
+
+/* Footer du CV */
+.cv-footer-tag {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN — 3 PALIERS
+   Desktop : > 1024px   (styles de base ci-dessus, container 850px)
+   Tablette : 601px – 1024px
+   Mobile   : ≤ 600px
+   ============================================================ */
+
+/* ---------- TABLETTE (601px – 1024px) ---------- */
+@media (max-width: 1024px) and (min-width: 601px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-content {
+        padding: 26px 24px;
+    }
+
+    .main-content {
+        padding: 28px 26px;
+    }
+
+    .main-content .main-section {
+        margin-bottom: 22px;
+    }
+
+    /* Texte principal légèrement plus grand que sur mobile */
+    body, .summary-text, .main-bullet-list li, .cv-item-sub,
+    .info-email, .info-phone, .info-local, .info-linkedin, .info-github {
+        font-size: 16px;
+    }
+
+    #pn {
+        font-size: 22px;
+    }
+
+    .main-content h2,
+    .main-content h3,
+    .sidebar-section h3,
+    .sidebar .main-section h3 {
+        font-size: 19px;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .skills-list span {
+        font-size: 13px;
+    }
+
+    * {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    .cv-item-header {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}
+
+/* ---------- MOBILE (≤ 600px) ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-content {
+        padding: 20px 18px;
+    }
+
+    .main-content {
+        padding: 20px 18px;
+    }
+
+    .main-content .main-section {
+        margin-bottom: 20px;
+    }
+
+    /* Texte principal 14-16px */
+    body, .summary-text, .main-bullet-list li, .cv-item-sub,
+    .info-email, .info-phone, .info-local, .info-linkedin, .info-github {
+        font-size: 15px;
+    }
+
+    /* Titres 18-24px */
+    #pn {
+        font-size: 20px;
+    }
+
+    .main-content h2,
+    .main-content h3,
+    .sidebar-section h3,
+    .sidebar .main-section h3 {
+        font-size: 18px;
+    }
+
+    /* Badges de compétences : passent à la ligne automatiquement */
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .skills-list span {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    /* Empêche tout débordement horizontal */
+    * {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    .cv-item-header {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}
+
+/* ---------- TRÈS PETITS MOBILES (≤ 380px) ---------- */
+@media (max-width: 380px) {
+    .sidebar-content,
+    .main-content {
+        padding: 16px 14px;
+    }
+
+    body, .summary-text, .main-bullet-list li, .cv-item-sub {
+        font-size: 14px;
+    }
+
+    #pn {
+        font-size: 18px;
+    }
+
+    .main-content h2,
+    .main-content h3,
+    .sidebar-section h3,
+    .sidebar .main-section h3 {
+        font-size: 17px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ============================================================
+   VUE ATS — mise en page sobre pour lecture par logiciels de recrutement
+   Activée en ajoutant la classe .ats-view sur <body> via cv.js.
+   - Une seule colonne (pas de grille multi-colonnes, plus fiable à parser)
+   - Pas de couleurs ni d'arrondis ni d'ombres (variables redéfinies)
+   - Pas d'icônes (les polices d'icônes peuvent générer des caractères
+     illisibles pour certains parseurs ATS)
+   - Pas de photo (non recommandée sur un CV ATS)
+   ============================================================ */
+.ats-view {
+    --primary-blue: #000000;
+    --accent-blue: #000000;
+    --light-blue: #ffffff;
+    --chip-bg: #ffffff;
+    --chip-text: #000000;
+    --bg-body: #ffffff;
+    --bg-card: #ffffff;
+    --border-color: #000000;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --shadow: none;
+}
+
+.ats-view .cv-container {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    border: 1px solid #000000;
+}
+
+.ats-view .sidebar {
+    border-right: none;
+    border-bottom: 2px solid #000000;
+}
+
+.ats-view .sidebar-header {
+    background: none;
+    color: #000000;
+    text-align: left;
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.ats-view #past {
+    color: #000000;
+}
+
+.ats-view .profile-pic-container {
+    display: none;
+}
+
+.ats-view i.fas,
+.ats-view i.fab {
+    display: none;
+}
+
+.ats-view .skills-list span {
+    background: none;
+    color: #000000;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+}
+
+.ats-view .skills-list span::after {
+    content: " •";
+    color: #000000;
+}
+
+.ats-view .skills-list span:last-child::after {
+    content: "";
+}
+
+.ats-view .cv-item-date {
+    background: none;
+    color: #000000;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.ats-view .portfolio-link {
+    background: none;
+    border: 1px solid #000000;
+}
+
+.ats-view .toggle-view-btn,
+.ats-view .download-pdf-btn {
+    color: #000000;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+}
+
+/* ============================================================
+   IMPRESSION (EXPORT PDF)
+   ============================================================ */
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .portfolio-link {
+        background: none;
+    }
+
+    .download-pdf-btn,
+    .toggle-view-btn {
+        display: none;
+    }
+}
